@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tifavre <tifavre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 10:48:19 by timothy           #+#    #+#             */
-/*   Updated: 2024/01/10 12:00:57 by tifavre          ###   ########.fr       */
+/*   Created: 2023/10/31 16:19:26 by timothy           #+#    #+#             */
+/*   Updated: 2024/05/13 12:05:07 by tifavre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return ;
-	del(lst->content);
-	free(lst);
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
-/*void	del(void *content)
-{
-	(void)content;
-}
-
-int main(void)
+/*int main(void)
 {
     t_list *node1 = ft_lstnew((void *)42);
     t_list *node2 = ft_lstnew((void *)123);
@@ -33,15 +29,9 @@ int main(void)
 
     node1->next = node2;
     node2->next = node3;
-	node3->next = NULL;
 
-	ft_lstdelone(node2, del);
-    while (node1 != NULL)
-    {
-        printf("%d -> ", (int)(intptr_t)node1->content);
-        node1 = node1->next;
-    }
-    printf("NULL\n");
-    
-	return 0;
+    if (node1->next != NULL)
+        printf("Node1 and next: %d\n", (int)(intptr_t)node1->next->content);
+	printf("Last: %i\n", (int)(intptr_t)ft_lstlast(node1)->content);
+    return 0;
 }*/

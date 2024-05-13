@@ -6,11 +6,11 @@
 /*   By: tifavre <tifavre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 11:18:40 by timothy           #+#    #+#             */
-/*   Updated: 2024/01/10 12:42:29 by tifavre          ###   ########.fr       */
+/*   Updated: 2024/05/13 12:05:09 by tifavre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

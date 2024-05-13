@@ -1,0 +1,3 @@
+- fill stack a with argv, and print it
+- modify the lst functions (instead of content, put value and label as int)
+- With the help of the lst functions, recreate the instructions

@@ -6,11 +6,11 @@
 /*   By: tifavre <tifavre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:13:51 by timothy           #+#    #+#             */
-/*   Updated: 2024/01/10 12:00:52 by tifavre          ###   ########.fr       */
+/*   Updated: 2024/05/13 12:04:56 by tifavre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

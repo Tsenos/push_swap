@@ -6,7 +6,7 @@
 #    By: tifavre <tifavre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 11:42:00 by tifavre           #+#    #+#              #
-#    Updated: 2024/05/12 17:14:00 by tifavre          ###   ########.fr        #
+#    Updated: 2024/05/13 11:58:49 by tifavre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,18 +48,8 @@ SRCS	=	ft_isalpha.c	\
 			ft_printf_utils1.c	\
 			ft_printf_utils2.c
 
-SRCSB	=	ft_lstnew_bonus.c		\
-			ft_lstadd_front_bonus.c	\
-			ft_lstsize_bonus.c		\
-			ft_lstlast_bonus.c		\
-			ft_lstadd_back_bonus.c	\
-			ft_lstdelone_bonus.c	\
-			ft_lstclear_bonus.c		\
-			ft_lstiter_bonus.c		\
-			ft_lstmap_bonus.c
 
 OBJS	=	${SRCS:.c=.o}
-OBJSB	=	${SRCSB:.c=.o}
 CC		=	gcc
 CCFLAGS	=	-Wall -Werror -Wextra
 NAME	= 	libft.a
@@ -78,11 +68,8 @@ ${NAME}: ${OBJS}
 	@${ARRCS} ${NAME} ${OBJS}
 	@echo "$(COLOR_GREEN)libft.a$'\t$'\tcreated$(COLOR_END)"
 
-bonus: ${NAME} ${OBJSB}
-	${ARRCS} ${NAME} ${OBJSB}
-
 clean:
-	@${RM} ${OBJS} ${OBJSB}
+	@${RM} ${OBJS}
 	@echo "$(COLOR_GREEN)libft.a$'\t$'\tcleaned$(COLOR_END)"
 
 fclean: clean

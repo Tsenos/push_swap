@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tifavre <tifavre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 19:35:22 by timothy           #+#    #+#             */
-/*   Updated: 2024/01/10 12:01:00 by tifavre          ###   ########.fr       */
+/*   Created: 2023/11/09 11:39:04 by timothy           #+#    #+#             */
+/*   Updated: 2024/05/13 12:04:59 by tifavre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!lst)
-		return ;
-	while (lst)
+	t_list	*tmp;
+
+	while (*lst)
 	{
-		(*f)(lst->content);
-		lst = lst->next;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
+	*lst = NULL;
 }
 
-/*void	f(void *s)
+/*void	del(void *content)
 {
-	printf("Here's the node's address: %p\n", s);
+	free(content);
 }
 
 int main(void)
@@ -38,7 +40,7 @@ int main(void)
     node2->next = node3;
 	node3->next = NULL;
 
-	ft_lstiter(node1, f);
+	ft_lstdelone(node2, del);
     while (node1 != NULL)
     {
         printf("%d -> ", (int)(intptr_t)node1->content);
